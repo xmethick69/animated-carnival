@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff4d6d, #ff758f, #ffc2d1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 350px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .rose {
+      font-size: 60px;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      background: white;
+      color: #ff2e63;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 20px;
+      animation: hearts 6s linear infinite;
+      color: rgba(255,255,255,0.7);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes hearts {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="rose">🌹</div>
+    <h1>Happy Rose Day</h1>
+
+    <p>
+      Ye rose sirf ek phool nahi…<br>
+      Ye meri har muskurahat ka reason hai 🌹<br><br>
+
+      Jab bhi tum hasti ho na,<br>
+      duniya thodi zyada khoobsurat lagti hai 💖<br><br>
+
+      Agar feelings ko rang diya ja sake,<br>
+      to meri har feeling ka rang bas **Tum** ho 💕
+      Mera Baccha 🌷💗
+</div>
+  <script>
+    function playMusic() {
+      document.getElementById("bgMusic").play();
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+
+</body>
+</html>
